@@ -1,8 +1,6 @@
 name: Login
 
 on:
-  workflow_dispatch:
-  
   schedule:
     - cron: '35 11 */7 * *'
 
