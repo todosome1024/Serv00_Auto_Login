@@ -1,6 +1,8 @@
 name: Update README.md
 
+
 on:
+  workflow_dispatch:
   schedule:
     # 计划任务，每14天运行一次
     - cron: '30 17 */14 * *'
