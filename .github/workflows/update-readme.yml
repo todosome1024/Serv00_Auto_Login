@@ -14,14 +14,17 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: main
 
     - name: Update README.md
       run: |
         # 拉取
         git pull
+        
         # 追加日期到README.md
         echo -e "\nUpdated on $(date)" >> README.md
-
+        
         # 确保README.md在git仓库中被改动
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -34,3 +37,4 @@ jobs:
       uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
