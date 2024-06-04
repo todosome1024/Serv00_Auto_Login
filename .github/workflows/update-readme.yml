@@ -17,6 +17,8 @@ jobs:
 
     - name: Update README.md
       run: |
+        # 拉取
+        git pull
         # 这里写入你的更新README.md的逻辑
         # 下面的示例是简单地追加当前日期到README.md文件
         echo -e "\nUpdated on $(date)" >> README.md
